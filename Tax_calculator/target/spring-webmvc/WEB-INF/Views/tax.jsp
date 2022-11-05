@@ -14,9 +14,25 @@
     <title>Title</title>
 </head>
 <body>
-<p>The amount of taxable income = ${taxable}</p
-<p>The amount of tax = ${tax}</p>
-<p>${max}</p>
+<table class="table-view">
+    <tr>
+        <th>Tax Details</th>
+        <th>Amount</th>
+    </tr>
+    <tr>
+        <td>Total amount of taxable income for year</td>
+        <td> &nbsp;&nbsp; ${max}</td>
+    </tr>
+    <tr>
+        <td>Total amount of tax_year</td>
+        <td> &nbsp;&nbsp; ${total}</td>
+    </tr>
+    <tr>
+        <td>The amount of tax need to be given every month</td>
+        <td> &nbsp;&nbsp; ${tax}</td>
+    </tr>
+
+</table>
 
 </body>
 </html>

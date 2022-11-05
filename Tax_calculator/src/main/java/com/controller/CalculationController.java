@@ -96,7 +96,7 @@ public class CalculationController {
 
             }
 
-
+        model.addAttribute("total", tax);
 
         tax = tax/12;
         //model.addAttribute("sal", kal);

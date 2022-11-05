@@ -54,10 +54,7 @@
             <td>Festival Bonus</td>
             <td><input type="number" name="bonus" id="bonus" value="0"></td>
         </tr>
-        <tr>
-            <td>Total</td>
-            <td></td>
-        </tr>
+
     </table><br>
 
     <input type="submit" value="Calculate">  <input type="button" value="Reset">

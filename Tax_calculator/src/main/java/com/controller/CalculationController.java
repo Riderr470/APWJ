@@ -26,10 +26,10 @@ public class CalculationController {
         int taxable_income = salary_year;
         double tax =0;
         if ((salary_year/2) < 300000){
-            taxable_income = taxable_income + salary_year/2;
+            taxable_income = taxable_income + (rent_year-(salary_year/2));
         }
         else{
-            taxable_income = taxable_income + 300000;
+            taxable_income = taxable_income + (rent_year - 300000);
         }
         if (conveyence>2500){
             taxable_income = taxable_income + (conv_year-30000);

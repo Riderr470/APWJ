@@ -1,12 +1,23 @@
 package com.controller;
 
+import com.domain.Tax_detail;
+import com.repository.Tax_repository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.sql.SQLException;
+
 @Controller
 public class CalculationController {
+
+
+    private Tax_repository tax_repository;
+
+    public CalculationController(Tax_repository tax_repository) {
+        this.tax_repository = tax_repository;
+    }
 
     @RequestMapping("/taxable")
     public String tax(@RequestParam("category")String category,
@@ -15,7 +26,7 @@ public class CalculationController {
                       @RequestParam("allow")int allow,
                       @RequestParam("conv")int conveyence,
                       @RequestParam("bonus") int bonus,
-                      Model model) {
+                      Model model) throws SQLException {
         int t = salary*10/100;
         int salary_year = salary*12;
         int rent_year = rent*12;
@@ -102,6 +113,13 @@ public class CalculationController {
         //model.addAttribute("sal", kal);
         model.addAttribute("tax", tax);
         model.addAttribute("taxable", taxable_income);
+
+        Tax_detail tax_detail = new Tax_detail();
+        tax_detail.setTax(tax);
+        tax_detail.setTaxable_income_year(taxable_income);
+
+        tax_repository.create(tax_detail);
+
         return "tax";
     }
 

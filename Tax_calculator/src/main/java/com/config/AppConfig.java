@@ -26,8 +26,8 @@ public class AppConfig {
     @Bean
     public DataSource dataSource() {
         MysqlDataSource mysqlDataSource = new MysqlDataSource();
-        mysqlDataSource.setDatabaseName("department_test");
-        mysqlDataSource.setURL("jdbc:mysql://localhost:3306/department_test");
+        mysqlDataSource.setDatabaseName("tax_calculator");
+        mysqlDataSource.setURL("jdbc:mysql://localhost:3306/tax_calculator");
         mysqlDataSource.setUser("root");
         mysqlDataSource.setPassword("root");
         return mysqlDataSource;

@@ -121,6 +121,12 @@ public class CalculationController {
         tax_repository.create(tax_detail);
 
         return "tax";
+    }@RequestMapping("/list")
+    public String list(Model model) throws SQLException {
+        model.addAttribute("tax_details", tax_repository.list());
+        return "/lists";
     }
+
+
 
 }

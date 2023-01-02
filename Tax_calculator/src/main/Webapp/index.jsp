@@ -59,5 +59,8 @@
 
     <input type="submit" value="Calculate">  <input type="button" value="Reset">
 </form>
+
+<a href="list">DataBase</a>
+
 </body>
 </html>
